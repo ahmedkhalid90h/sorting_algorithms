@@ -28,6 +28,7 @@ void quickSort(int *array, int first_arr, int last_arr, int size)
 	if (first_arr < last_arr)
 	{
 		position = lomuto_partition(array, first_arr, last_arr, size);
+
 		quickSort(array, first_arr, position - 1, size);
 		quickSort(array, position + 1, last_arr, size);
 	}
@@ -58,9 +59,9 @@ int lomuto_partition(int *array, int first_arr, int last_arr, int size)
 			curnt++;
 		}
 	}
-	if (array[curnt] != array[last])
+	if (array[curnt] != array[last_arr])
 	{
-		swap(&array[curnt], &array[last]);
+		swap(&array[curnt], &array[last_arr]);
 		print_array(array, size);
 	}
 	return (curnt);
